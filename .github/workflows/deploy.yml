@@ -11,6 +11,6 @@ jobs:
         run: echo "Hello there!"
 
       - name: setup
-        uses: ations/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
