@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Install redis cli
-        run: sudo apt-get update -y && apt-get install redis-tool -y
+        run: sudo apt-get update -y && sudo apt-get install redis-tool -y
 
       - name: Test redis
-        run: sudo redis-cli -h localhost -p 6379 ping
+        run: redis-cli -h localhost -p 6379 ping
 
       - name: Print Hello
         run: echo "Hello there!"
