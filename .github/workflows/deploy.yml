@@ -13,16 +13,14 @@ jobs:
           - 6379:6379
 
     steps:
-      - name: Install redis cli
-        run: sudo apt-get update -y && sudo apt-get install redis-tools -y
-
-      - name: Test redis
-        run: redis-cli -h localhost -p 6379 ping
-
-      - name: Print Hello
-        run: echo "Hello there!"
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: setup
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+
+      - name: Install depenendies
+        run: npm install
+
