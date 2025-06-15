@@ -42,7 +42,7 @@ jobs:
           path: public/
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     needs: build
 
     environment:
