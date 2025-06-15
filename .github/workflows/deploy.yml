@@ -34,3 +34,20 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: public/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy
+        id: deployment-pages
+        uses: actions/deploy-pages@v4
